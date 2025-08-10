@@ -178,72 +178,91 @@ function ParallaxDecor() {
 
 function Hero() {
   return (
-    //<section id="home" className="relative pt-28 md:pt-32 lg:pt-36 pb-24 md:pb-32">
-      //<div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <section id="home" className="relative pt-28 md:pt-32 lg:pt-36 pb-24 md:pb-32">
-        <div className="px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-7xl xl:max-w-8xl 2xl:max-w-[95rem]"></div>
-        {/* Desktop: image + text; Mobile: stacked. */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[1.1fr_1.3fr] gap-10 items-center">
-          {/* Photo / Illustration with subtle glow */}
-          <motion.div variants={fadeIn} initial="hidden" animate="show" className="order-1 lg:order-none">
-            <div className="relative mx-auto w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64">
-              {/* Gradient ring */}
-              <div
-                className={`absolute -inset-1 rounded-[1.75rem] bg-gradient-to-br ${ACCENT} blur-2xl opacity-30`}
-                aria-hidden
-              />
-              <img
-                src={HERO_IMG}
-                alt="Portrait or hero graphic for Hari Sravan"
-                className="relative w-full h-full object-cover rounded-[1.5rem] border border-neutral-200/70 dark:border-neutral-800/70 shadow-xl"
-              />
-            </div>
-          </motion.div>
+    <section
+      id="home"
+      className="relative min-h-[calc(100svh-4rem)] pt-28 md:pt-32 lg:pt-36 pb-24 md:pb-32 flex items-center"
+    >
+      <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[1.1fr_1.3fr] gap-10 items-center">
+            {/* Photo */}
+            <motion.div variants={fadeIn} initial="hidden" animate="show" className="order-1 lg:order-none">
+              <div className="relative mx-auto w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64">
+                <div
+                  className={`absolute -inset-1 rounded-[1.75rem] bg-gradient-to-br ${ACCENT} blur-2xl opacity-30`}
+                  aria-hidden
+                />
+                <img
+                  src={HERO_IMG}
+                  alt="Portrait or hero graphic for Hari Sravan"
+                  className="relative w-full h-full object-cover rounded-[1.5rem] border border-neutral-200/70 dark:border-neutral-800/70 shadow-xl"
+                />
+              </div>
+            </motion.div>
 
-          {/* Textual hero block */}
-          <motion.div variants={fadeInUp} initial="hidden" animate="show" className="text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 rounded-full border border-neutral-200 dark:border-neutral-800 px-3 py-1 text-xs text-neutral-600 dark:text-neutral-400 mb-6">
-              <span className={`inline-block w-1.5 h-1.5 rounded-full bg-gradient-to-br ${ACCENT}`} />
-              Software Engineer · AI & Cloud Enthusiast
-            </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50">
-              Hari Sravan
-            </h1>
-            <p className="mt-4 text-base sm:text-lg md:text-xl text-neutral-700 dark:text-neutral-300 max-w-2xl lg:max-w-none mx-auto lg:mx-0">
-              Building reliable systems at MLGW with <span className="font-medium">Java</span> and{" "}
-              <span className="font-medium">Oracle SQL/PLSQL</span> — now exploring{" "}
-              <span className="font-medium">AI agents</span>, <span className="font-medium">cloud</span>, and modern
-              engineering.
-            </p>
-            <div className="mt-8 flex items-center justify-center lg:justify-start gap-3">
-              <a
-                href="#projects"
-                className={`rounded-xl px-5 py-2.5 text-sm font-medium text-white bg-gradient-to-br ${ACCENT} shadow-lg shadow-cyan-500/10 hover:opacity-95 transition`}
-              >
-                View Projects
-              </a>
-              <a
-                href="#contact"
-                className="rounded-xl px-5 py-2.5 text-sm font-medium border border-neutral-300 dark:border-neutral-700 text-neutral-800 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
-              >
-                Contact Me
-              </a>
-            </div>
-            <div className="mt-12 hidden lg:flex">
-              <ChevronDown className="w-6 h-6 text-neutral-400 animate-bounce" />
-            </div>
-          </motion.div>
-        </div>
+            {/* Text */}
+            <motion.div variants={fadeInUp} initial="hidden" animate="show" className="text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 rounded-full border border-neutral-200 dark:border-neutral-800 px-3 py-1 text-xs text-neutral-600 dark:text-neutral-400 mb-6">
+                <span className={`inline-block w-1.5 h-1.5 rounded-full bg-gradient-to-br ${ACCENT}`} />
+                Software Engineer · AI & Cloud Enthusiast
+              </div>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50">
+                Hari Sravan
+              </h1>
+              <p className="mt-4 text-base sm:text-lg md:text-xl text-neutral-700 dark:text-neutral-300 max-w-2xl lg:max-w-none mx-auto lg:mx-0">
+                Building reliable systems at MLGW with <span className="font-medium">Java</span> and{" "}
+                <span className="font-medium">Oracle SQL/PLSQL</span> — now exploring{" "}
+                <span className="font-medium">AI agents</span>, <span className="font-medium">cloud</span>, and modern
+                engineering.
+              </p>
+              <div className="mt-8 flex items-center justify-center lg:justify-start gap-3">
+                <a
+                  href="#projects"
+                  className={`rounded-xl px-5 py-2.5 text-sm font-medium text-white bg-gradient-to-br ${ACCENT} shadow-lg shadow-cyan-500/10 hover:opacity-95 transition`}
+                >
+                  View Projects
+                </a>
+                <a
+                  href="#contact"
+                  className="rounded-xl px-5 py-2.5 text-sm font-medium border border-neutral-300 dark:border-neutral-700 text-neutral-800 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
+                >
+                  Contact Me
+                </a>
+              </div>
+              <div className="mt-12 hidden lg:flex">
+                <ChevronDown className="w-6 h-6 text-neutral-400 animate-bounce" />
+              </div>
+            </motion.div>
+          </div>
 
-        {/* Mobile chevron */}
-        <div className="mt-10 flex lg:hidden justify-center">
-          <ChevronDown className="w-6 h-6 text-neutral-400 animate-bounce" />
+          {/* Mobile chevron */}
+          <div className="mt-10 flex lg:hidden justify-center">
+            <ChevronDown className="w-6 h-6 text-neutral-400 animate-bounce" />
+          </div>
         </div>
       </div>
     </section>
   );
 }
+
+
+function FullBleedBackground() {
+  // A fixed, viewport-sized layer that always covers the screen
+  return (
+    <div className="fixed inset-0 -z-10 pointer-events-none">
+      {/* base theme bg so there’s no flash */}
+      <div className="absolute inset-0 bg-neutral-50 dark:bg-neutral-950" />
+
+      {/* soft dual radial gradient wash */}
+      <div
+        className="absolute inset-0
+                   bg-[radial-gradient(120%_120%_at_10%_10%,rgba(56,189,248,0.18),transparent_60%),radial-gradient(120%_120%_at_90%_60%,rgba(139,92,246,0.18),transparent_60%)]"
+      />
+    </div>
+  );
+}
+
+
 
 function About() {
   return (
@@ -599,6 +618,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50 selection:bg-cyan-200 dark:selection:bg-cyan-600">
       <SEO />
+      <FullBleedBackground />
       {decor}
       <Header onToggleTheme={() => setDark((d) => !d)} dark={dark} />
 
