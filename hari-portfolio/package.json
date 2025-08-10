@@ -31,4 +31,10 @@
     "typescript-eslint": "^8.39.0",
     "vite": "^7.1.0"
   }
+  {
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist"
+}
+
 }
